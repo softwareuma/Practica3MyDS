@@ -5,6 +5,7 @@ import java.util.List;
 public class Expediente {
 
     private List<Acceso> listaAccesos;
+    private Diagnostico paciente;
 
     public Expediente (){
         listaAccesos = new ArrayList<Acceso>();
@@ -22,4 +23,11 @@ public class Expediente {
         return java.util.Collections.enumeration(listaAccesos);
     }
 
+    public Diagnostico getPaciente() {
+        return paciente;
+    }
+
+    public void setPaciente(Diagnostico paciente) {
+        this.paciente = paciente;
+    }
 }
