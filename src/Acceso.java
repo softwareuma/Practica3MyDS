@@ -9,5 +9,13 @@ public class Acceso {
 
     private Date fecha;
     private TipoAcceso tipo;
+    Profesional profesional;
+    Expediente expediente;
+
+
+
+    public Acceso (){
+
+    }
 
 }
