@@ -13,6 +13,8 @@ public class Acceso {
         tipo = t;
         profesional = p;
         expediente = e;
+        p.addAcceso(this);
+        e.addAcceso(this);
     }
 
     public Date getFecha() {
