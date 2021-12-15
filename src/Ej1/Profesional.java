@@ -1,13 +1,16 @@
+package Ej1;
+
+import Ej1.Acceso;
+
 import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.List;
 
-public class Expediente {
+public class Profesional {
 
     private List<Acceso> listaAccesos;
-    private Diagnostico paciente;
 
-    public Expediente (){
+    public Profesional (){
         listaAccesos = new ArrayList<Acceso>();
     }
 
@@ -23,11 +26,4 @@ public class Expediente {
         return java.util.Collections.enumeration(listaAccesos);
     }
 
-    public Diagnostico getPaciente() {
-        return paciente;
-    }
-
-    public void setPaciente(Diagnostico paciente) {
-        this.paciente = paciente;
-    }
 }

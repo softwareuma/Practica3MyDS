@@ -1,3 +1,7 @@
+package Ej1;
+
+import Ej1.Expediente;
+
 public class Diagnostico {
 
     Expediente expediente;
