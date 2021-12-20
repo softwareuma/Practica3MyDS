@@ -9,10 +9,16 @@ import java.util.List;
 public class Expediente {
 
     private List<Acceso> listaAccesos;
-    private Diagnostico paciente;
+    private Diagnostico diagnostico;
 
     public Expediente (){
         listaAccesos = new ArrayList<Acceso>();
+        diagnostico = new Diagnostico(this, new Paciente());
+    }
+
+    public Expediente (Paciente p){
+        listaAccesos = new ArrayList<Acceso>();
+        diagnostico = new Diagnostico(this,p);
     }
 
     protected void addAcceso(Acceso a){
@@ -27,11 +33,11 @@ public class Expediente {
         return java.util.Collections.enumeration(listaAccesos);
     }
 
-    public Diagnostico getPaciente() {
-        return paciente;
+    public Diagnostico getDiagnostico() {
+        return diagnostico;
     }
 
-    public void setPaciente(Diagnostico paciente) {
-        this.paciente = paciente;
+    public void setDiagnostico(Diagnostico diagnostico) {
+        this.diagnostico = diagnostico;
     }
 }

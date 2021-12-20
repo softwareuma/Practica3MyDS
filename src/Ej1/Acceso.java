@@ -51,7 +51,6 @@ public class Acceso {
         this.tipo = tipo;
     }
 
-
     public Profesional getProfesional() {
         return profesional;
     }
