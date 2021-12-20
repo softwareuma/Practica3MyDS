@@ -9,10 +9,8 @@ public class Paciente {
     private List<Diagnostico> listaExpedientes;
     private Expediente expedienteAbierto;
 
-    public Paciente(Expediente e){
+    Paciente() {
         listaExpedientes = new ArrayList<Diagnostico>();
-        Diagnostico d = new Diagnostico(e,this);
-
     }
 
     protected void addExpediente(Diagnostico a){

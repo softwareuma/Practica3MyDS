@@ -1,16 +1,15 @@
 package Ej1;
 
-import Ej1.Diagnostico;
-import Ej1.Expediente;
-import Ej1.Factory;
-
 public class Main {
     public static void main(String[] args) {
 
-        Paciente p= Factory.CrearPaciente();
-        p.addExpediente(new Diagnostico(new Expediente(),p));
-        System.out.println("Paciente " + p.toString() + " creado con expediente + " + p.getExpediente().toString());
 
+        //p.addExpediente(new Diagnostico(new Expediente(),p));
+        //System.out.println("Paciente " + p.toString() + " creado con expediente + " + p.getExpediente().toString());
+
+        Expediente e1 = new Expediente();
+        Paciente p1 = e1.getDiagnostico().getPaciente();
+        System.out.println("Paciente " + p1.toString() + " creado con expediente + " + p1.getExpediente().toString());
 
     }
 }
