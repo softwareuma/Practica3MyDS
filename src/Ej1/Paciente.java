@@ -6,18 +6,20 @@ import java.util.List;
 
 public class Paciente {
 
+    public int id;
     private List<Diagnostico> listaExpedientes;
     private Expediente expedienteAbierto;
 
-    Paciente() {
+    Paciente(int id) {
+        this.id = id;
         listaExpedientes = new ArrayList<Diagnostico>();
     }
 
-    protected void addExpediente(Diagnostico a){
+    void addExpediente(Diagnostico a){
         listaExpedientes.add(a);
     }
 
-    protected void rmExpediente(Diagnostico a){
+    void rmExpediente(Diagnostico a){
         listaExpedientes.remove(a);
     }
 
@@ -29,7 +31,20 @@ public class Paciente {
         return expedienteAbierto;
     }
 
-    private void setExpedienteAbierto(Expediente expedienteAbierto) {
+    void setExpedienteAbierto(Expediente expedienteAbierto) {
         this.expedienteAbierto = expedienteAbierto;
+    }
+
+    public void cerrarExpedienteAbierto() {
+        this.expedienteAbierto = null;
+    }
+
+    @Override
+    public String toString() {
+        return "Paciente{" +
+                "id=" + id +
+                ", listaExpedientes=" + listaExpedientes.toString() +
+                ", expedienteAbierto=" + expedienteAbierto +
+                '}';
     }
 }

@@ -36,4 +36,12 @@ public class Diagnostico {
     private void setPaciente(Paciente paciente) {
         this.paciente = paciente;
     }
+
+    @Override
+    public String toString() {
+        return "Diagnostico{" +
+                "expediente=" + expediente.id +
+                ", paciente=" + paciente.id +
+                '}';
+    }
 }
