@@ -8,24 +8,29 @@ import java.util.List;
 
 public class Expediente {
 
+    public int id;
     private List<Acceso> listaAccesos;
     private Diagnostico diagnostico;
 
-    public Expediente (){
+    public Expediente (int id){
+        this.id = id;
         listaAccesos = new ArrayList<Acceso>();
-        diagnostico = new Diagnostico(this, new Paciente());
+        diagnostico = new Diagnostico(this, new Paciente(id));
     }
 
-    public Expediente (Paciente p){
+    public Expediente (int id, Paciente p){
+        this.id = id;
+        p.setExpedienteAbierto(this);
         listaAccesos = new ArrayList<Acceso>();
         diagnostico = new Diagnostico(this,p);
     }
 
-    protected void addAcceso(Acceso a){
+
+    void addAcceso(Acceso a){
         listaAccesos.add(a);
     }
 
-    protected void rmAcceso(Acceso a){
+    void rmAcceso(Acceso a){
         listaAccesos.remove(a);
     }
 
@@ -39,5 +44,14 @@ public class Expediente {
 
     public void setDiagnostico(Diagnostico diagnostico) {
         this.diagnostico = diagnostico;
+    }
+
+    @Override
+    public String toString() {
+        return "Expediente{" +
+                "id=" + id +
+                ", listaAccesos=" + listaAccesos +
+                ", diagnostico=" + diagnostico +
+                '}';
     }
 }

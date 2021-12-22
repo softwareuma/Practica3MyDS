@@ -9,16 +9,18 @@ import java.util.List;
 public class Profesional {
 
     private List<Acceso> listaAccesos;
+    public int id;
 
-    public Profesional (){
+    public Profesional (int id){
+        this.id = id;
         listaAccesos = new ArrayList<Acceso>();
     }
 
-    protected void addAcceso(Acceso a){
+    void addAcceso(Acceso a){
         listaAccesos.add(a);
     }
 
-    protected void rmAcceso(Acceso a){
+    void rmAcceso(Acceso a){
         listaAccesos.remove(a);
     }
 
@@ -26,4 +28,11 @@ public class Profesional {
         return java.util.Collections.enumeration(listaAccesos);
     }
 
+    @Override
+    public String toString() {
+        return "Profesional{" +
+                "id=" + this.id +
+                "listaAccesos=" + listaAccesos.toString() +
+                '}';
+    }
 }
