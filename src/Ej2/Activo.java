@@ -1,9 +1,13 @@
 package Ej2;
 
-public interface Activo extends Trabajador {
+public class Activo extends Trabajador {
 
-    default void incrementar() {
+    public Activo(String nombre, String numSeg, double sal) {
+        super(nombre, numSeg, sal);
+    }
 
+    public void incrementar() {
+        salario = salario*1.02;
     }
 
 }

@@ -1,35 +1,41 @@
 package Ej2;
 
-public class MedioPensionista implements Pensionista,Activo{
+public class MedioPensionista extends Trabajador{
 
-    private String nombre;
-    private String numeroSeguridadSocial;
-    protected double salario;
+    private Activo a;
+    private Pensionista p;
 
-    public MedioPensionista(String nom, String numSS, double r){
-        setNombre(nom);
-        setNumeroSeguridadSocial(numSS);
+    public MedioPensionista(String nombre, String numSeg, double salActivo, double salPensionista) {
+        super(nombre, numSeg, salActivo+salPensionista);
+        setActivo(new Activo(nombre,numSeg,salActivo));
+        setPensionista(new Pensionista(nombre,numSeg,salPensionista));
     }
 
-    public double Nomina(){
-        return salario;
+    @Override
+    public double nomina() {
+        return getActivo().nomina() + getPensionista().nomina();
     }
 
-    public void incrementar(){}
-
-    private void setNombre(String nombre) {
-        this.nombre = nombre;
+    @Override
+    public void incrementar() {
+        getActivo().incrementar();
+        getPensionista().incrementar();
+        setSalario(nomina());
     }
 
-    public String getNombre() {
-        return nombre;
+    private Activo getActivo() {
+        return a;
     }
 
-    public String getNumeroSeguridadSocial() {
-        return numeroSeguridadSocial;
+    private void setActivo(Activo a) {
+        this.a = a;
     }
 
-    private void setNumeroSeguridadSocial(String numeroSeguridadSocial) {
-        this.numeroSeguridadSocial = numeroSeguridadSocial;
+    private Pensionista getPensionista() {
+        return p;
+    }
+
+    private void setPensionista(Pensionista p) {
+        this.p = p;
     }
 }
