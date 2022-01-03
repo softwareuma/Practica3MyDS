@@ -51,7 +51,6 @@ public class Acceso {
         this.tipo = tipo;
     }
 
-
     public Profesional getProfesional() {
         return profesional;
     }
@@ -67,4 +66,16 @@ public class Acceso {
     private void setExpediente(Expediente expediente) {
         this.expediente = expediente;
     }
+
+
+    @Override
+    public String toString() {
+        return "Acceso{" +
+                "fecha=" + fecha.toString() +
+                ", tipo=" + tipo.toString() +
+                ", profesional=" + profesional.id +
+                ", expediente=" + expediente.id +
+                '}';
+    }
+
 }
