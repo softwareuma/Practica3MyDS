@@ -14,6 +14,8 @@ public class Pieza {
     }
 
     void setBandeja(Bandeja bandeja) {
+        assert bandeja!=null;
+
         this.bandeja = bandeja;
     }
 
