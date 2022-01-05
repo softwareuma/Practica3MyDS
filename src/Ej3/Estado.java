@@ -4,6 +4,8 @@ public abstract class Estado {
     protected Bandeja bandeja;
 
     public Estado(Bandeja bandeja) {
+        assert bandeja!=null;
+
         this.bandeja = bandeja;
     }
 

@@ -7,6 +7,8 @@ public class Normal extends Estado {
 
     @Override
     public void put(Pieza p) {
+        assert p!=null;
+
         if (size() < bandeja.getCapacidad()-1) {
             bandeja.setEstado(new Normal(bandeja));
         } else {

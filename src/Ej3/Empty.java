@@ -9,6 +9,8 @@ public class Empty extends Estado {
 
     @Override
     public void put(Pieza p) {
+        assert p!=null;
+
         if (bandeja.getCapacidad() > 1) {
             bandeja.setEstado(new Normal(bandeja));
         } else {

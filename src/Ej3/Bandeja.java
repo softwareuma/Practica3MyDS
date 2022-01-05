@@ -35,6 +35,8 @@ public class Bandeja {
     }
 
     private void setCapacidad(int capacidad) {
+        assert capacidad>0;
+
         this.capacidad = capacidad;
     }
 
@@ -43,6 +45,8 @@ public class Bandeja {
     }
 
     void setPiezas(Stack<Pieza> piezas) {
+        assert piezas!=null;
+
         this.piezas = piezas;
     }
 
@@ -51,6 +55,8 @@ public class Bandeja {
     }
 
     void setEstado(Estado estado) {
+        assert estado!=null;
+
         this.estado = estado;
     }
 
