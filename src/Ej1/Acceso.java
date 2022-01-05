@@ -10,13 +10,12 @@ public class Acceso {
     private Profesional profesional;
     private Expediente expediente;
 
-
     public Acceso (Profesional p, Expediente e, Date f, TipoAcceso t){
         assert p!=null;
         assert e!=null;
         assert noDups(p,e);
-        fecha = f;
-        tipo = t;
+        setFecha(f);
+        setTipo(t);
         setProfesional(p);
         setExpediente(e);
         p.addAcceso(this);
@@ -39,7 +38,7 @@ public class Acceso {
         return fecha;
     }
 
-    public void setFecha(Date fecha) {
+    private void setFecha(Date fecha) {
         this.fecha = fecha;
     }
 
@@ -47,7 +46,7 @@ public class Acceso {
         return tipo;
     }
 
-    public void setTipo(TipoAcceso tipo) {
+    private void setTipo(TipoAcceso tipo) {
         this.tipo = tipo;
     }
 
@@ -56,6 +55,7 @@ public class Acceso {
     }
 
     private void setProfesional(Profesional profesional) {
+        assert profesional!=null;
         this.profesional = profesional;
     }
 
@@ -64,9 +64,9 @@ public class Acceso {
     }
 
     private void setExpediente(Expediente expediente) {
+        assert expediente!=null;
         this.expediente = expediente;
     }
-
 
     @Override
     public String toString() {
@@ -77,5 +77,4 @@ public class Acceso {
                 ", expediente=" + expediente.id +
                 '}';
     }
-
 }

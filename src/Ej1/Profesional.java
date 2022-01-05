@@ -17,10 +17,14 @@ public class Profesional {
     }
 
     void addAcceso(Acceso a){
+        assert a!=null;
+
         listaAccesos.add(a);
     }
 
     void rmAcceso(Acceso a){
+        assert a!=null;
+
         listaAccesos.remove(a);
     }
 

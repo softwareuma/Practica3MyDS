@@ -7,7 +7,10 @@ public class Diagnostico {
     private Expediente expediente;
     private Paciente paciente;
 
-    public Diagnostico(Expediente e, Paciente p){
+    Diagnostico(Expediente e, Paciente p){
+        assert e!=null;
+        assert p!=null;
+
         setExpediente(e);
         setPaciente(p);
         p.addExpediente(this);
@@ -15,10 +18,14 @@ public class Diagnostico {
     }
 
     void remove(){
+
         expediente.setDiagnostico(null);
         paciente.rmExpediente(this);
         setPaciente(null);
         setExpediente(null);
+
+        assert expediente==null;
+        assert paciente==null;
     }
 
     public Expediente getExpediente() {
@@ -26,6 +33,8 @@ public class Diagnostico {
     }
 
     private void setExpediente(Expediente expediente) {
+        assert expediente!=null;
+
         this.expediente = expediente;
     }
 
@@ -34,6 +43,8 @@ public class Diagnostico {
     }
 
     private void setPaciente(Paciente paciente) {
+        assert paciente!=null;
+
         this.paciente = paciente;
     }
 

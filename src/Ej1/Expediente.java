@@ -19,6 +19,7 @@ public class Expediente {
     }
 
     public Expediente (int id, Paciente p){
+        assert p!=null;
         this.id = id;
         p.setExpedienteAbierto(this);
         listaAccesos = new ArrayList<Acceso>();
@@ -27,10 +28,12 @@ public class Expediente {
 
 
     void addAcceso(Acceso a){
+        assert a!=null;
         listaAccesos.add(a);
     }
 
     void rmAcceso(Acceso a){
+        assert a!=null;
         listaAccesos.remove(a);
     }
 
@@ -43,6 +46,7 @@ public class Expediente {
     }
 
     public void setDiagnostico(Diagnostico diagnostico) {
+        assert diagnostico!=null;
         this.diagnostico = diagnostico;
     }
 
