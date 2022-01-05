@@ -28,6 +28,8 @@ public class MedioPensionista extends Trabajador{
     }
 
     private void setActivo(Activo a) {
+        assert a!=null;
+
         this.a = a;
     }
 
@@ -36,6 +38,8 @@ public class MedioPensionista extends Trabajador{
     }
 
     private void setPensionista(Pensionista p) {
+        assert p!=null;
+        
         this.p = p;
     }
 }

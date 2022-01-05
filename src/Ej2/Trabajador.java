@@ -7,6 +7,10 @@ public abstract class Trabajador {
     protected double salario;
 
     public Trabajador(String nombre, String numSeg, double sal) {
+        assert nombre!=null;
+        assert numSeg!=null;
+        assert sal>=0;
+
         setNombre(nombre);
         setNumeroSeguridadSocial(numSeg);
         setSalario(sal);
