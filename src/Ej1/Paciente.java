@@ -16,10 +16,14 @@ public class Paciente {
     }
 
     void addExpediente(Diagnostico a){
+        assert a!=null;
+
         listaExpedientes.add(a);
     }
 
     void rmExpediente(Diagnostico a){
+        assert a!=null;
+
         listaExpedientes.remove(a);
     }
 
